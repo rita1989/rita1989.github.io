@@ -1,0 +1,86 @@
+<html>
+
+    <head>
+    	<meta charset="utf-8">
+
+    	<script type="text/javascript">
+        // Math是js内置的一个专门进行数学运算的对象。 他有一个内置方法叫random(),可以用来生成随机数
+        //生成的随机数的特点是范围是在 0-1之间
+        var num = Math.random() *10;  // x10 这样范围就变成0-10之间的浮点数
+        num = Math.round(num); //取整
+        //console.log(num);
+
+        var s = 0 ; //计数器
+    	function wanqing() 
+    	{
+            s = s + 1; // 计数器加1
+            console.log(s);
+
+            if(s>=3) {
+                s = 0 ;//计数器归零
+                output = '你已经猜过3次啦，重头再来吧！';
+                num = Math.random() *10;  // x10 这样范围就变成0-10之间的浮点数
+                num = Math.round(num); //取整
+                document.getElementById("output").innerHTML = output;  //输出
+                return false;
+            }
+            //获取表单输入框的值，赋值给变量value
+    		var value = document.getElementById("shrk").value; //输入
+
+
+            //var output = value + '是个二货';
+            var output;
+
+            if (value != num) {
+                if(value < num ) {
+                    output = '猜错了！猜小了';
+                } else {
+                    output = '猜错了，猜大了！';
+                }
+                
+            } else {
+                output = '你好厉害，猜对了！';
+            }
+
+            
+
+
+
+
+
+
+
+            //获取id为output的元素、标签对象。 讲变量value的值赋值给
+            //这个对象的属性innerHTML ，此属性可以改变 id为output的元素的内部内容
+            document.getElementById("output").innerHTML = output;  //输出
+    		
+           
+
+    		return;
+    	}
+
+        
+
+    	</script>
+	</head>
+
+	<body>
+        <br><br>
+
+        陈皖清的小游戏:
+        <br>
+        猜猜我心中的数字是多少?
+        <br><br>
+        
+		<form>
+			<input type="text" name="shrk" id="shrk">
+			<input type="button" value="提交" onclick=wanqing()>
+			<!--<button onclick=wanqing()>提交</button>  -->  
+		</form>
+
+        <br><br>
+
+        <div id="output">
+        </div>
+	</body>
+</html>

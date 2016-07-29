@@ -1,0 +1,48 @@
+<html>
+
+    <head>
+    	<meta charset="utf-8">
+
+    	<script type="text/javascript">
+    	function wanqing() 
+    	{
+            //获取表单输入框的值，赋值给变量value
+    		var value = document.getElementById("shrk").value; //输入
+
+
+            var output = value + '是个二货';
+
+
+
+
+
+
+
+            //获取id为output的元素、标签对象。 讲变量value的值赋值给
+            //这个对象的属性innerHTML ，此属性可以改变 id为output的元素的内部内容
+            document.getElementById("output").innerHTML = output;  //输出
+    		
+           
+
+    		return;
+    	}
+    	</script>
+	</head>
+
+	<body>
+        <br><br>
+
+
+        
+		<form>
+			<input type="text" name="shrk" id="shrk">
+			<input type="button" value="提交" onclick=wanqing()>
+			<!--<button onclick=wanqing()>提交</button>  -->  
+		</form>
+
+        <br><br>
+
+        <div id="output">
+        </div>
+	</body>
+</html>
